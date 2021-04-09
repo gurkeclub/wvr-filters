@@ -1,0 +1,36 @@
+{
+    "mode": {
+        "Rectangle": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+        ]
+    },
+    "inputs": [
+        "InputImage"
+    ],
+    "vertex_shader": [
+        "std/default.vs.glsl"
+    ],
+    "fragment_shader": [
+        "std/header.glsl",
+        "std/noise.glsl",
+        "std/misc.glsl",
+        "main.fs.glsl"
+    ],
+    "variables": {
+        "FACTOR": [
+            {
+                "Float": 1.0
+            },
+            {
+                "FloatRange": [
+                    -10.0,
+                    10.0,
+                    0.001
+                ]
+            }
+        ]
+    }
+}

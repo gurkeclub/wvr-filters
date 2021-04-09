@@ -1,0 +1,82 @@
+{
+    "mode": {
+        "Rectangle": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+        ]
+    },
+    "inputs": [
+        "InputImage"
+    ],
+    "vertex_shader": [
+        "std/default.vs.glsl"
+    ],
+    "fragment_shader": [
+        "std/header.glsl",
+        "std/noise.glsl",
+        "std/misc.glsl",
+        "main.fs.glsl"
+    ],
+    "variables": {
+        "MIRROR": [
+            {
+                "Bool": false
+            },
+            "None"
+        ],
+        "CHROMA": [
+            {
+                "Bool": false
+            },
+            "None"
+        ],
+        "THRESHOLD_REVERSE": [
+            {
+                "Bool": false
+            },
+            "None"
+        ],
+        "THRESHOLD": [
+            {
+                "Float": 0.9
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    0.9,
+                    0.0001
+                ]
+            }
+        ],
+        "CHROMA_FACTORS": [
+            {
+                "Float3": [
+                    -1.0,
+                    1.0,
+                    -1.0
+                ]
+            },
+            {
+                "FloatRange": [
+                    -1.0,
+                    1.0,
+                    0.001
+                ]
+            }
+        ],
+        "THRESHOLD_SLOPE": [
+            {
+                "Float": 0.1
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    0.9,
+                    0.0001
+                ]
+            }
+        ]
+    }
+}
