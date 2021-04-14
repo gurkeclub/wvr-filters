@@ -1,3 +1,5 @@
+uniform bool MIRROR;
+
 uniform float DOT_RADIUS;
 
 uniform float BEAT_SYNC;
@@ -14,7 +16,7 @@ vec3 scene_color(vec2 uv) {
   vec2 interval = vec2(DOT_RADIUS);
 
   // time varying density
-  interval *= (1.0 - BEAT_EFFECT * cos(iBeat * BEAT_SYNC * PI));
+  //interval *= ();
 
   // border effect
   interval *=
@@ -47,6 +49,7 @@ vec3 scene_color(vec2 uv) {
       // Color intensity for the ink dot
       col = floor(col * POSTERIZATION_LEVELS) / POSTERIZATION_LEVELS;
       col = hsv2rgb(pow(rgb2hsv(col), vec3(1.0, 1.0 / 2.0, 1.0)));
+      col *= 1.0 - BEAT_EFFECT * abs(fract(iBeat * BEAT_SYNC) * 2.0 - 1.0);
 
       // col = pow(col * 2.0 - 1.0, vec3(3.0)) * 0.5 + 0.5;
       // radius of the dot for each of the color components
@@ -64,8 +67,9 @@ vec3 scene_color(vec2 uv) {
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   vec2 uv = fragCoord / iResolution.xy;
-  uv.x = 1.0 - uv.x;
-
+  if (MIRROR) {
+    uv.x = 1.0 - uv.x;
+  }
   vec3 col = scene_color(uv);
 
   float lod = log2(DOT_RADIUS);

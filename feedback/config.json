@@ -1,0 +1,59 @@
+{
+    "mode": {
+        "Rectangle": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+        ]
+    },
+    "inputs": [
+        "image",
+        "feedback",
+        "feedback_mask"
+    ],
+    "vertex_shader": [
+        "std/default.vs.glsl"
+    ],
+    "fragment_shader": [
+        "std/header.glsl",
+        "std/noise.glsl",
+        "std/misc.glsl",
+        "main.fs.glsl"
+    ],
+    "variables": {
+        "INVERT_MASK": [
+            {
+                "Bool": false
+            },
+            "None"
+        ],
+        "FEEDBACK_OFFSET": [
+            {
+                "Float2": [
+                    0.0,
+                    1.0
+                ]
+            },
+            {
+                "FloatRange": [
+                    -10.0,
+                    10.0,
+                    0.01
+                ]
+            }
+        ],
+        "FEEDBACK_DECAY": [
+            {
+                "Float": 0.01
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    1.0,
+                    0.0001
+                ]
+            }
+        ]
+    }
+}

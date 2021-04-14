@@ -19,6 +19,12 @@
         "main.fs.glsl"
     ],
     "variables": {
+        "MIRROR": [
+            {
+                "Bool": false
+            },
+            "None"
+        ],
         "BEAT_EFFECT": [
             {
                 "Float": 0
@@ -74,7 +80,7 @@
             {
                 "FloatRange": [
                     0.0,
-                    1000.0,
+                    64.0,
                     1.0
                 ]
             }
