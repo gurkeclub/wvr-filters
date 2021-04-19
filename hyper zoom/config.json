@@ -19,33 +19,15 @@
         "main.fs.glsl"
     ],
     "variables": {
-        "MIRROR": [
+        "MAGNITUDE": [
             {
-                "Bool": false
-            },
-            "None"
-        ],
-        "POSTERIZATION_LEVELS": [
-            {
-                "Float": 16
+                "Float": 0
             },
             {
                 "FloatRange": [
                     0.0,
-                    256.0,
-                    1.0
-                ]
-            }
-        ],
-        "DOT_RADIUS": [
-            {
-                "Float": 15
-            },
-            {
-                "FloatRange": [
-                    0.0,
-                    64.0,
-                    1.0
+                    1.0,
+                    0.0001
                 ]
             }
         ]

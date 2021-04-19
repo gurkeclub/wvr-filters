@@ -15,37 +15,30 @@
     ],
     "fragment_shader": [
         "std/header.glsl",
-        "std/misc.glsl",
         "main.fs.glsl"
     ],
     "variables": {
-        "MIRROR": [
+        "BEAT_SYNC_DIV": [
             {
-                "Bool": false
-            },
-            "None"
-        ],
-        "POSTERIZATION_LEVELS": [
-            {
-                "Float": 16
+                "Int": 1
             },
             {
-                "FloatRange": [
-                    0.0,
-                    256.0,
-                    1.0
+                "IntRange": [
+                    1,
+                    32,
+                    1
                 ]
             }
         ],
-        "DOT_RADIUS": [
+        "BEAT_SYNC_MUL": [
             {
-                "Float": 15
+                "Int": 1
             },
             {
-                "FloatRange": [
-                    0.0,
-                    64.0,
-                    1.0
+                "IntRange": [
+                    1,
+                    32,
+                    1
                 ]
             }
         ]

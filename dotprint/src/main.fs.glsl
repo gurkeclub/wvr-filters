@@ -1,11 +1,7 @@
 uniform bool MIRROR;
 
-uniform float DOT_RADIUS;
+uniform float DOT_RADIUS; 
 
-uniform float BEAT_SYNC;
-uniform float BEAT_EFFECT;
-
-uniform float BORDER_EFFECT;
 uniform float POSTERIZATION_LEVELS;
 
 vec2 rot(vec2 p, float r) {
@@ -14,15 +10,6 @@ vec2 rot(vec2 p, float r) {
 
 vec3 scene_color(vec2 uv) {
   vec2 interval = vec2(DOT_RADIUS);
-
-  // time varying density
-  //interval *= ();
-
-  // border effect
-  interval *=
-      (1.0 + BORDER_EFFECT *
-                 smoothstep(0.0, 0.25,
-                            max(abs(uv.x - 0.5), abs(uv.y - 0.5)) - 0.375));
 
   // computation of the closest dot center;
   vec2 ref = uv - 0.5;
@@ -49,16 +36,13 @@ vec3 scene_color(vec2 uv) {
       // Color intensity for the ink dot
       col = floor(col * POSTERIZATION_LEVELS) / POSTERIZATION_LEVELS;
       col = hsv2rgb(pow(rgb2hsv(col), vec3(1.0, 1.0 / 2.0, 1.0)));
-      col *= 1.0 - BEAT_EFFECT * abs(fract(iBeat * BEAT_SYNC) * 2.0 - 1.0);
 
-      // col = pow(col * 2.0 - 1.0, vec3(3.0)) * 0.5 + 0.5;
       // radius of the dot for each of the color components
       vec3 radius = (1.0 - col) / 1.5 * sqrt(2.0);
 
       // Substraction of each color component for the currently considered ink
-      // dot
       value = min(value,
-                  smoothstep(-1.0 / interval.x, 0.0, center_distance - radius));
+                  smoothstep(-1.0 / interval.x, 1.0 / interval.x, center_distance - radius));
     }
   }
 
@@ -72,8 +56,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   }
   vec3 col = scene_color(uv);
 
-  float lod = log2(DOT_RADIUS);
-  // col = mix(col, textureLod(iChannel0, uv, lod).rgb, step(uv.x, 0.5));
 
   fragColor = vec4(col, 1.0);
 }
