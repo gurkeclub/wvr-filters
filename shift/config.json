@@ -7,7 +7,9 @@
             1.0
         ]
     },
-    "inputs": [],
+    "inputs": [
+        "inputImage"
+    ],
     "vertex_shader": [
         "std/default.vs.glsl"
     ],
@@ -18,30 +20,6 @@
         "main.fs.glsl"
     ],
     "variables": {
-        "DOT_DENSITY": [
-            {
-                "Float": 2.0
-            },
-            {
-                "FloatRange": [
-                    1.0,
-                    10.0,
-                    0.005
-                ]
-            }
-        ],
-        "DOT_SIZE": [
-            {
-                "Float": 0.5
-            },
-            {
-                "FloatRange": [
-                    0.0,
-                    1.0,
-                    0.001
-                ]
-            }
-        ],
         "OFFSET": [
             {
                 "Float2": [

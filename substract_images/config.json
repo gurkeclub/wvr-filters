@@ -20,5 +20,12 @@
         "std/misc.glsl",
         "main.fs.glsl"
     ],
-    "variables": {}
+    "variables": {
+        "ABSOLUTE": [
+            {
+                "Bool": false
+            },
+            "None"
+        ]
+    }
 }
