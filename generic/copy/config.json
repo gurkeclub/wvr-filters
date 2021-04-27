@@ -18,29 +18,17 @@
         "main.fs.glsl"
     ],
     "variables": {
-        "BEAT_SYNC_DIV": [
+        "FLIP_VERTICAL": [
             {
-                "Int": 1
+                "Bool": false
             },
-            {
-                "IntRange": [
-                    1,
-                    32,
-                    1
-                ]
-            }
+            "None"
         ],
-        "BEAT_SYNC_MUL": [
+        "FLIP_HORIZONTAL": [
             {
-                "Int": 1
+                "Bool": false
             },
-            {
-                "IntRange": [
-                    1,
-                    32,
-                    1
-                ]
-            }
+            "None"
         ]
     }
 }
