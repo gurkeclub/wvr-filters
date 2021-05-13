@@ -1,0 +1,92 @@
+{
+    "mode": {
+        "Rectangle": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+        ]
+    },
+    "inputs": [
+        "ants",
+        "pheromons",
+        "food"
+    ],
+    "vertex_shader": [
+        "std/default.vs.glsl"
+    ],
+    "fragment_shader": [
+        "std/header.glsl",
+        "std/noise.glsl",
+        "std/misc.glsl",
+        "main.fs.glsl"
+    ],
+    "variables": {
+        "PHEROMON_DECAY": [
+            {
+                "Float": 0.001
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    0.1,
+                    0.00001
+                ]
+            }
+        ],
+        "ANT_SIZE": [
+            {
+                "Float": 3.0
+            },
+            {
+                "FloatRange": [
+                    1.0,
+                    100.0,
+                    1.0
+                ]
+            }
+        ],
+        "ANT_EXPLORATION": [
+            {
+                "Float": 0.25
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    1.0,
+                    0.0001
+                ]
+            }
+        ],
+        "ANT_GROUPING": [
+            {
+                "Float": 0.25
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    0.5,
+                    0.0001
+                ]
+            }
+        ],
+        "ANT_REINFORCEMENT": [
+            {
+                "Float": 0.90
+            },
+            {
+                "FloatRange": [
+                    0.0,
+                    1.0,
+                    0.0001
+                ]
+            }
+        ],
+        "RESET": [
+            {
+                "Bool": false
+            },
+            "None"
+        ]
+    }
+}

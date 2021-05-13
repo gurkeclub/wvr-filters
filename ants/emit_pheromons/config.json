@@ -1,0 +1,31 @@
+{
+    "mode": {
+        "Particles": 10000
+    },
+    "inputs": [
+        "ants"
+    ],
+    "vertex_shader": [
+        "main.vs.glsl"
+    ],
+    "fragment_shader": [
+        "std/header.glsl",
+        "std/noise.glsl",
+        "std/misc.glsl",
+        "main.fs.glsl"
+    ],
+    "variables": {
+        "ANT_SIZE": [
+            {
+                "Float": 3.0
+            },
+            {
+                "FloatRange": [
+                    1.0,
+                    100.0,
+                    1.0
+                ]
+            }
+        ]
+    }
+}
